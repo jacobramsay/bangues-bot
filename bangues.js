@@ -1,9 +1,13 @@
+const moreketplece = require('./moreketPlece');
 const { Client, Intents } = require('discord.js');
+const images = require('./images');
+
+
 const client = new Client({ intents: [Intents.FLAGS.GUILDS, Intents.FLAGS.GUILD_MESSAGES, Intents.FLAGS.GUILD_MESSAGE_TYPING, Intents.FLAGS.DIRECT_MESSAGES]});
 
-client.on('ready', () =>{
+client.on('ready', async () => {
     console.log('Bangues ready to opperate');
-})
+});
 
 client.on('interactionCreate', async interaction => {
     console.log(interaction);
@@ -21,6 +25,22 @@ client.on('interactionCreate', async interaction => {
             ]
         });
       }
+
+      if (interaction.commandName === 'gilles') {
+        const imgIndex = Math.floor(Math.random() * 150);
+        console.log(images.images[imgIndex]);
+
+        await interaction.reply({
+            content: 'Bangues comes back with some gold',
+            files: [
+                {
+                    attachment: images.images[imgIndex],
+                    name: 'bangues.png',
+                    description: 'The lord and savior'
+                  }
+            ]
+        });
+      }
   });
 
-client.login('OTMyMDQzNzU3MDEwOTQ0MDIx.YeNPZA.3EJncCC0rWAL6kPkb2t1E3eOxH8');
+client.login('');

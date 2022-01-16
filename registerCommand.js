@@ -3,13 +3,14 @@ const { Routes } = require('discord-api-types/v9');
 const { SlashCommandBuilder } = require('@discordjs/builders');
 
 const commands = [
-  new SlashCommandBuilder().setName('bangues').setDescription("Give's you Gille's best")
+  new SlashCommandBuilder().setName('bangues').setDescription("Give's you Gille's best"),
+  new SlashCommandBuilder().setName('gilles').setDescription("Suprise me Gille")
 ]; 
 
 const CLIENT_ID = '932043757010944021';
 const GUILD_ID = '932058246234124329';
 
-const rest = new REST({ version: '9' }).setToken('OTMyMDQzNzU3MDEwOTQ0MDIx.YeNPZA.3EJncCC0rWAL6kPkb2t1E3eOxH8');
+const rest = new REST({ version: '9' }).setToken('');
 
 
 
@@ -17,7 +18,7 @@ const rest = new REST({ version: '9' }).setToken('OTMyMDQzNzU3MDEwOTQ0MDIx.YeNPZ
   try {
     console.log('Started refreshing application (/) commands.');
     await rest.put(
-      Routes.applicationCommands(CLIENT_ID),
+      Routes.applicationGuildCommands(CLIENT_ID, GUILD_ID),
       { 
         body: commands
       }
