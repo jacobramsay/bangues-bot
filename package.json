@@ -1,0 +1,21 @@
+{
+  "name": "bangues",
+  "version": "1.0.0",
+  "description": "Gille's wonderland",
+  "main": "bangues.js",
+  "scripts": {
+    "start": "node bangues",
+    "node-version": "node -v"
+  },
+  "author": "jacobramsay",
+  "license": "ISC",
+  "dependencies": {
+    "@discordjs/rest": "^0.2.0-canary.0",
+    "axios": "^0.24.0",
+    "discord-api-types": "^0.26.1",
+    "discord.js": "^13.6.0"
+  },
+  "engines": {
+    "node": ">=16.13.2"
+  }
+}
