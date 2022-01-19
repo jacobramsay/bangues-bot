@@ -2,8 +2,7 @@ const moreketplece = require('./moreketPlece');
 const { Client, Intents } = require('discord.js');
 const secrets = require('./secrets');
 const image = require('./images');
-
-var cron = require('node-cron');
+const cron = require('node-cron');
 
 
 
