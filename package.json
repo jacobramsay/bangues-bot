@@ -5,7 +5,8 @@
   "main": "bangues.js",
   "scripts": {
     "start": "node bangues",
-    "node-version": "node -v"
+    "node-version": "node -v",
+    "register-command": "node registerCommand"
   },
   "author": "jacobramsay",
   "license": "ISC",
