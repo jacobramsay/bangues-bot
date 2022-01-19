@@ -15,11 +15,11 @@ async function getHtml() {
     return await rp(mereketPleceUrl);
 };
 
-async function getPosts() {
+async function getPosts(nbPosts) {
     const html = await getHtml();
     const $ = cheerio.load(html);
     const posts = [];
-    for (let i = 0; i < 12; i++) {
+    for (let i = 0; i < nbPosts; i++) {
       posts.push($('li > div > div > a > img', html)[i].attribs.src);
     }
     return posts;
