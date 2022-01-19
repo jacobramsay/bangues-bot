@@ -46,19 +46,27 @@ client.on('interactionCreate', async interaction => {
 
       if (interaction.commandName === 'gilles') {
         try {
+            const wowLuckyNumberLOL = 69;
             const imgIndex = Math.floor(Math.random() * imagesArray.length);
-            console.log('Sending this post: ', imagesArray[imgIndex]);
-    
-            await interaction.reply({
-                content: 'Bangues comes back with some gold',
-                files: [
-                    {
-                        attachment: imagesArray[imgIndex],
-                        name: 'bangues.png',
-                        description: 'The lord and savior'
-                      }
-                ]
-            });   
+            
+            console.log(`${wowLuckyNumberLOL} et ${imgIndex}`);
+
+            if(wowLuckyNumberLOL == imgIndex) {
+                await interaction.reply({
+                    content: `You just got a 1/${imagesArray.length} chance drop :O  https://www.youtube.com/watch?v=d1zzvW2oYjs&ab_channel=polar`,
+                }); 
+            } else {
+                await interaction.reply({
+                    content: 'Bangues comes back with some gold',
+                    files: [
+                        {
+                            attachment: imagesArray[imgIndex],
+                            name: 'bangues.png',
+                            description: 'The lord and savior'
+                          }
+                    ]
+                }); 
+            }  
         } catch (error) {
             console.log(error);
         }
